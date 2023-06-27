@@ -113,46 +113,51 @@ const Index = () => {
 
   // create post
   const createPost = (title) => {
+    const value = inputValue.trim()
+    if (value !== '') {
+      const data = {title: `${value}`, userId: `${selectedUserId}`}
 
-    const data = {title: `${inputValue}`, userId: `${selectedUserId}`}
-
-    fetch(SERVER_URL + `post`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data)
-    })
-        .then(httpResponse => httpResponse.json())
-        .then(response => {
-          setSelectedPostId(0)
-          setInputValue('')
-          updateDataPost()
-        }).catch(error => {
-      console.error(error);
-    })
+      fetch(SERVER_URL + `post`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data)
+      })
+          .then(httpResponse => httpResponse.json())
+          .then(response => {
+            setSelectedPostId(0)
+            setInputValue('')
+            updateDataPost()
+          }).catch(error => {
+        console.error(error);
+      })
+    }
   }
 
   // update post
   const updatePost = (title) => {
-    const data = {title: `${inputValue}`, userId: `${selectedUserId}`}
-    console.log("Обновим")
+    const value = inputValue.trim()
+    if (value !== '') {
+      const data = {title: `${value}`, userId: `${selectedUserId}`}
+      console.log("Обновим")
 
-    fetch(SERVER_URL + `post/${selectedPostId}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data)
-    })
-        .then(httpResponse => httpResponse.json())
-        .then(response => {
-          setSelectedPostId(0)
-          setInputValue('')
-          updateDataPost()
-        }).catch(error => {
-      console.error(error);
-    })
+      fetch(SERVER_URL + `post/${selectedPostId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data)
+      })
+          .then(httpResponse => httpResponse.json())
+          .then(response => {
+            setSelectedPostId(0)
+            setInputValue('')
+            updateDataPost()
+          }).catch(error => {
+        console.error(error);
+      })
+    }
   }
 
   const selectionUserChangedCallback = e => {
