@@ -65,7 +65,7 @@
 - Страницы "Dashboard" и "User Profile" остались без изменений (из шаблона).
 
 ## Контакты
-Телефон +7 (965) 205 55 37
-Email alievtm@gmail.com
-Telegram https://t.me/Aliev_Timur_M
+- Телефон +7 (965) 205 55 37
+- Email alievtm@gmail.com
+- Telegram https://t.me/Aliev_Timur_M
 
