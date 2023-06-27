@@ -13,7 +13,7 @@
 - настроить подключение к БД можно в файле "config/db.config".
 
 3) Клиент (React)
-- открыть папку "client" и выполнить команду "npm install --force";
+- открыть папку "client" и выполнить команду "npm install --legacy-peer-deps";
 - запустить клиент с помощью команду "npm start";
 - настроить подключение к серверу можно в файле "src/variables/urlServer.js".
 
